@@ -6,10 +6,23 @@
     <title>Task Tracker App</title>
     <link rel="stylesheet" href="style.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
 </head>
 <body>
+
+    <h1 id="header">What are your tasks?</h1>
     
+
+    <form id="add-task-form">
+        <input type="text" name="task" placeholder="Enter your task">
+        <button>Add task</button>
+    </form>
+
+    <ul id="task-list"></ul>
+    
+    
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
