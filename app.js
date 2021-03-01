@@ -15,13 +15,17 @@ function renderTaskList(doc) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     db.collection('todolist').add({
-        task: form.task.value
+        task: form.task.value,
+        author: form.author.value,
+        category: form.category.value
     });
     form.task.value = '';
+    form.author.value = '';
+    form.category.value = '';
     console.log('Task added!');
 })
 
-db.collection('todolist').onSnapshot(snapshot => {
+db.collection('todolist').orderBy('task').onSnapshot(snapshot => {
     let changes = snapshot.docChanges();
     changes.forEach(change => {
         if (change.type == 'added') {
