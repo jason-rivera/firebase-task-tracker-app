@@ -40,10 +40,9 @@ db.collection('todolist').onSnapshot(snapshot => {
     changes.forEach(change => {
         if (change.type == 'added') {
             renderTaskList(change.doc);
-        } else if (change.type == 'removed') {
-            let li = taskList.querySelector('[data-id' + change.doc.id + ']');
+        } else if (change.type =='removed') {
+            let li = taskList.querySelector('[data-id=' + change.doc.id + ']');
             taskList.removeChild(li);
         }
     })
-    console.log('Todo list Data retrieved');
 })
