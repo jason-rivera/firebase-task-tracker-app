@@ -5,6 +5,7 @@ body {
 }
 
 .container {
+    margin: 30px;
     padding: 20px;
     min-width: 30%;
     border: 20px solid red;
